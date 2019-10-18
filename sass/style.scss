@@ -4,14 +4,6 @@
   letter-spacing: 1px;
 }
 
-body {
-  font-family: 'Raleway', sans-serif;
-}
-
-li {
-  list-style: none;
-}
-
 $primary-color : #ff4544;
 
 $secondary-color: #d0393a;
@@ -23,6 +15,14 @@ $breakpoint-small : 550px;
 $breakpoint-medium : 800px;
 
 $breakpoint-large : 1000px;
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+li {
+  list-style: none;
+}
 
 @mixin centerAlign {
   align-items: center;
@@ -63,6 +63,10 @@ $breakpoint-large : 1000px;
 
 .margin-auto {
   margin: auto;
+}
+
+ul {
+  display: none;
 }
 
 header {
@@ -214,9 +218,56 @@ header {
   }
 }
 
-ul {
-  display: none;
+main {
+  background-color: $section-color;
+
+  section {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+
+    h2 {
+      border-bottom:  5px solid $secondary-color;
+      color: $secondary-color;
+      text-align: center;
+      text-transform: uppercase;
+      width: 20%;
+    }
+
+    .about-rows {
+      margin: 30px 0px 0px 0px;
+
+      article {
+        align-items: center;
+        max-width: 50%;
+        flex-direction: column;
+
+        div {
+          @include centerAlign;
+          background-color: $primary-color;
+          height: 70px;
+          transform: rotate(45deg);
+          width: 70px;
+
+          i {
+            transform: rotate(-45deg);
+          }
+        }
+
+        p {
+          font-size: 12px;
+          padding: 30px 12px;
+          text-align: justify;
+        }
+
+        .fa-tablet {
+          padding: 0px 0px 15px 20px;
+        }
+      }
+    }
+  }
 }
+
 
 /**** Big screen sizes ****/
 

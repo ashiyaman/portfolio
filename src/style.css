@@ -36,6 +36,9 @@ header .animate-area .small-inner-circle, header .animate-area .red-inner-circle
 .margin-auto {
   margin: auto; }
 
+ul {
+  display: none; }
+
 header {
   background-color: #ff4544;
   color: #fff;
@@ -133,8 +136,39 @@ header {
         header .header-text nav ul li:first-child {
           padding-left: 7%; }
 
-ul {
-  display: none; }
+main {
+  background-color: #f4f4f4; }
+  main section {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px; }
+    main section h2 {
+      border-bottom: 5px solid #d0393a;
+      color: #d0393a;
+      text-align: center;
+      text-transform: uppercase;
+      width: 20%; }
+    main section .about-rows {
+      margin: 30px 0px 0px 0px; }
+      main section .about-rows article {
+        align-items: center;
+        max-width: 50%;
+        flex-direction: column; }
+        main section .about-rows article div {
+          align-items: center;
+          justify-content: center;
+          background-color: #ff4544;
+          height: 70px;
+          transform: rotate(45deg);
+          width: 70px; }
+          main section .about-rows article div i {
+            transform: rotate(-45deg); }
+        main section .about-rows article p {
+          font-size: 12px;
+          padding: 30px 12px;
+          text-align: justify; }
+        main section .about-rows article .fa-tablet {
+          padding: 0px 0px 15px 20px; }
 
 /**** Big screen sizes ****/
 @media screen and (min-width: 550px) {

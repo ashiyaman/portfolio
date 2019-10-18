@@ -5,8 +5,8 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Ashiya Banu - Front end web developer</title>
     <link rel='stylesheet' href='src/style.css'></link>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/9e65627017.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap' rel='stylesheet'>
+    <script src='https://kit.fontawesome.com/9e65627017.js' crossorigin='anonymous'></script>
   </head>
   <body>
     <header>
@@ -23,11 +23,11 @@
         <section class='flex'>
           <h1>I'm Ashiya.<br>Front-end web developer.</h1>
           <button>View my work
-            <i class="fas fa-arrow-right"></i>
+            <i class='fas fa-arrow-right'></i>
           </button>
         </section>
         <nav>
-          <a><i class="fas fa-bars"></i></a>
+          <a><i class='fas fa-bars'></i></a>
           <ul class='flex'>
             <li>home</li>
             <li>about</li>
@@ -37,14 +37,39 @@
         </nav>
       </div>
     </header>
-    <section id='about'>
-      <h2>about</h2>
-    </section>
-    <section id='projects'>
-    </section>
-    <section id='contact'>
-    </section>
-    <footer>
-    </footer>
+    <main>
+      <section class='flex'>
+        <h2>about</h2>
+        <div class='flex about-rows'>
+          <article class='flex'>
+            <div class='flex'><i class='far fa-lightbulb fa-2x fa-inverse'></i></div>
+            <p>I like to code things from scratch, and enjoy bringing ideas to life in the browser</p>
+          </article>
+          <article class='flex'>
+            <div class='flex'><i class='fa fa-user fa-2x fa-inverse'></i></div>
+            <p>Iam focused on crafting clean & user-friendly experiences</p>
+          </article>
+        </div>
+        <div class='flex about-rows'>
+          <article class='flex'>
+            <div class='flex'>
+              <i class='fa fa-tablet fa-stack-1x fa-inverse'></i>
+              <i class='fa fa-laptop fa-stack-2x fa-inverse'></i>
+            </div>
+            <p>My layout will work on all devices irrespective of their size</p>
+          </article>
+          <article class='flex'>
+            <div class='flex'><i class='far fa-lightbulb'></i></div>
+            <p>I like to code things from scratch, and enjoy bringing ideas to life in the browser</p>
+          </article>
+        </div>
+      </section>
+      <section id='projects'>
+      </section>
+      <section id='contact'>
+      </section>
+      <footer>
+      </footer>
+    </main>
   </body>
 </html>
