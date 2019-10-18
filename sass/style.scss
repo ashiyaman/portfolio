@@ -1,6 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
+  letter-spacing: 1px;
 }
 
 body {
@@ -12,6 +13,8 @@ li {
 }
 
 $primary-color : #ff4544;
+
+$secondary-color: #d0393a;
 
 $breakpoint-small : 550px;
 
@@ -64,16 +67,19 @@ header {
   background-color: $primary-color;
   color: #fff;
   height: 550px;
+  position: relative;
 
   .animate-area {
     height: inherit;
     overflow: hidden;
+    position: absolute;
+    width: 100%;
 
     .square {
       @include centerAlign;
       animation: rotate 15s infinite linear;
       background-color: #f23334;
-      box-shadow: 20px 30px 20px #d0393a;
+      box-shadow: 20px 30px 20px $secondary-color;
       height: 230px;
       opacity: 0.8;
       transform: rotate(45deg);
@@ -90,7 +96,7 @@ header {
 
       .inner-square {
         background-color: #ff4544;
-        box-shadow: 20px 30px 20px inset #d0393a;
+        box-shadow: 20px 30px 20px inset $secondary-color;
         height: 130px;
         width: 130px;
       }
@@ -147,6 +153,63 @@ header {
       width: 55px;
     }
   }
+
+  .header-text {
+    flex-direction: column;
+    height: inherit;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+
+    section {
+      align-self: center;
+      flex-direction: column;
+
+      * {
+        text-align: center;
+        line-height: 40px;
+      }
+
+      h1 {
+        font-weight: 500;
+      }
+
+      button {
+        background: none;
+        border: 1px solid #fff;
+        color: inherit;
+        margin: 15px auto;
+        padding: 0px 8px;
+      }
+    }
+
+    nav {
+      background-color: $secondary-color;
+      bottom: 0%;
+      height: 55px;
+      position: absolute;
+      width: 100%;
+
+      a {
+        display: none;
+      }
+
+      ul {
+        align-items: center;
+        height: inherit;
+
+        li {
+          font-weight: 200;
+          padding: 0px 10px;
+          text-transform: uppercase;
+        }
+
+        li:first-child {
+          padding-left: 7%;
+        }
+      }
+    }
+  }
 }
 
 ul {
@@ -171,6 +234,12 @@ ul {
     }
     100% {
       transform: translate(-30%, -30%);
+    }
+  }
+
+  nav {
+    li {
+      font-size: 12px;
     }
   }
 }

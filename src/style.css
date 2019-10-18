@@ -1,6 +1,7 @@
 * {
   margin: 0px;
-  padding: 0px; }
+  padding: 0px;
+  letter-spacing: 1px; }
 
 body {
   font-family: 'Raleway', sans-serif; }
@@ -38,10 +39,13 @@ header .animate-area .small-inner-circle, header .animate-area .red-inner-circle
 header {
   background-color: #ff4544;
   color: #fff;
-  height: 550px; }
+  height: 550px;
+  position: relative; }
   header .animate-area {
     height: inherit;
-    overflow: hidden; }
+    overflow: hidden;
+    position: absolute;
+    width: 100%; }
     header .animate-area .square {
       align-items: center;
       justify-content: center;
@@ -91,6 +95,43 @@ header {
     header .animate-area .red-inner-circle {
       height: 55px;
       width: 55px; }
+  header .header-text {
+    flex-direction: column;
+    height: inherit;
+    justify-content: center;
+    position: absolute;
+    width: 100%; }
+    header .header-text section {
+      align-self: center;
+      flex-direction: column; }
+      header .header-text section * {
+        text-align: center;
+        line-height: 40px; }
+      header .header-text section h1 {
+        font-weight: 500; }
+      header .header-text section button {
+        background: none;
+        border: 1px solid #fff;
+        color: inherit;
+        margin: 15px auto;
+        padding: 0px 8px; }
+    header .header-text nav {
+      background-color: #d0393a;
+      bottom: 0%;
+      height: 55px;
+      position: absolute;
+      width: 100%; }
+      header .header-text nav a {
+        display: none; }
+      header .header-text nav ul {
+        align-items: center;
+        height: inherit; }
+        header .header-text nav ul li {
+          font-weight: 200;
+          padding: 0px 10px;
+          text-transform: uppercase; }
+        header .header-text nav ul li:first-child {
+          padding-left: 7%; }
 
 ul {
   display: none; }
@@ -107,7 +148,9 @@ ul {
     75% {
       transform: translate(-30%, 180%); }
     100% {
-      transform: translate(-30%, -30%); } } }
+      transform: translate(-30%, -30%); } }
+  nav li {
+    font-size: 12px; } }
 @media screen and (min-width: 800px) {
   @keyframes revolve {
     0% {
