@@ -53,6 +53,17 @@ li {
   width: 25px;
 }
 
+@mixin tiltedSquare {
+  @include centerAlign;
+  height: 70px;
+  transform: rotate(45deg);
+  width: 70px;
+
+  i {
+    transform: rotate(-45deg);
+  }
+}
+
 .flex {
   display: flex;
 }
@@ -69,96 +80,102 @@ ul {
   display: none;
 }
 
-header {
+#contact, header {
   background-color: $primary-color;
   color: #fff;
-  height: 550px;
   position: relative;
+}
 
-  .animate-area {
-    height: inherit;
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
+.animate-area {
+  height: inherit;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
 
-    .square {
-      @include centerAlign;
-      animation: rotate 15s infinite linear;
-      background-color: #f23334;
-      box-shadow: 20px 30px 20px $secondary-color;
-      height: 230px;
-      opacity: 0.8;
-      transform: rotate(45deg);
-      width: 230px;
+  .square {
+    @include centerAlign;
+    animation: rotate 15s infinite linear;
+    background-color: #f23334;
+    box-shadow: 20px 30px 20px $secondary-color;
+    height: 230px;
+    opacity: 0.8;
+    transform: rotate(45deg);
+    width: 230px;
 
-      @keyframes rotate {
-        from {
-          transform: rotate(45deg);
-        }
-        to {
-          transform: rotate(-45deg);
-        }
+    @keyframes rotate {
+      from {
+        transform: rotate(45deg);
       }
-
-      .inner-square {
-        background-color: #ff4544;
-        box-shadow: 20px 30px 20px inset $secondary-color;
-        height: 130px;
-        width: 130px;
+      to {
+        transform: rotate(-45deg);
       }
     }
 
-    .big-circle {
-      animation: revolve 30s infinite ease-in;
-      background: radial-gradient(#fd4042 45%, #e81d30);
-      border-radius: 50%;
-      height: 220px;
-      width: 220px;
-
-      @keyframes revolve {
-        0% {
-          transform: translate(-30%, -30%);
-        }
-        25% {
-          transform: translate(110%, -30%);
-        }
-        50% {
-          transform: translate(110%, 150%);
-        }
-        75% {
-          transform: translate(-30%, 150%);
-        }
-        100% {
-          transform: translate(-30%, -30%);
-        }
-      }
-    }
-
-    .small-outer-circle {
-      @extend %outer-circle;
-      animation: grow 10s infinite linear;
-      background-color: #fff;
-      margin: 10px;
-    }
-
-    .small-inner-circle {
-      @extend %inner-circle;
-    };
-
-    .red-outer-circle {
-      @extend %outer-circle;
-      animation: grow 15s infinite ease-in-out;
-      background-color: #db3c3d;
-      height: 60px;
-      width: 60px;
-    }
-
-    .red-inner-circle {
-      @extend %inner-circle;
-      height: 55px;
-      width: 55px;
+    .inner-square {
+      background-color: #ff4544;
+      box-shadow: 20px 30px 20px inset $secondary-color;
+      height: 130px;
+      width: 130px;
     }
   }
+
+  .big-circle {
+    animation: revolve 30s infinite ease-in;
+    background: radial-gradient(#fd4042 45%, #e81d30);
+    border-radius: 50%;
+    height: 220px;
+    width: 220px;
+
+    @keyframes revolve {
+      0% {
+        transform: translate(-30%, -30%);
+      }
+      25% {
+        transform: translate(110%, -30%);
+      }
+      50% {
+        transform: translate(110%, 150%);
+      }
+      75% {
+        transform: translate(-30%, 150%);
+      }
+      100% {
+        transform: translate(-30%, -30%);
+      }
+    }
+  }
+
+  .small-outer-circle {
+    @extend %outer-circle;
+    animation: grow 10s infinite linear;
+    background-color: #fff;
+    margin: 10px;
+  }
+
+  .small-inner-circle {
+    @extend %inner-circle;
+  };
+
+  .red-outer-circle {
+    @extend %outer-circle;
+    animation: grow 15s infinite ease-in-out;
+    background-color: #db3c3d;
+    height: 60px;
+    width: 60px;
+  }
+
+  .red-inner-circle {
+    @extend %inner-circle;
+    height: 55px;
+    width: 55px;
+  }
+}
+
+header {
+  /*background-color: $primary-color;
+  color: #fff;
+  position: relative;*/
+  height: 550px;
 
   .header-text {
     flex-direction: column;
@@ -244,15 +261,8 @@ main {
         flex-direction: column;
 
         div {
-          @include centerAlign;
+          @include tiltedSquare;
           background-color: $primary-color;
-          height: 70px;
-          transform: rotate(45deg);
-          width: 70px;
-
-          i {
-            transform: rotate(-45deg);
-          }
         }
 
         p {
@@ -292,9 +302,41 @@ main {
       }
     }
   }
+
+  #contact {
+    min-height: 300px;
+
+    .animate-area {
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: inherit;
+
+      div {
+        justify-content: space-around;
+      }
+    }
+
+    .contact-text {
+      color: #fff;
+      position: absolute;
+      width: 100%;
+
+      h2 {
+        border-bottom: 5px solid #fff;
+        color: inherit;
+      }
+
+      article {
+        justify-content: space-around;
+
+        div {
+          @include tiltedSquare;
+          background-color: #fff;
+        }
+      }
+    }
+  }
 }
-
-
 
 /**** Big screen sizes ****/
 

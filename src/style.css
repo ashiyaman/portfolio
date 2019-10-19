@@ -9,7 +9,7 @@ body {
 li {
   list-style: none; }
 
-header .animate-area .small-outer-circle, header .animate-area .red-outer-circle {
+.animate-area .small-outer-circle, .animate-area .red-outer-circle {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
@@ -21,7 +21,7 @@ header .animate-area .small-outer-circle, header .animate-area .red-outer-circle
     transform: scale(0); }
   100% {
     transform: scale(1); } }
-header .animate-area .small-inner-circle, header .animate-area .red-inner-circle {
+.animate-area .small-inner-circle, .animate-area .red-inner-circle {
   background-color: #ff4544;
   border-radius: 50%;
   height: 25px;
@@ -39,42 +39,42 @@ header .animate-area .small-inner-circle, header .animate-area .red-inner-circle
 ul {
   display: none; }
 
-header {
+#contact, header {
   background-color: #ff4544;
   color: #fff;
-  height: 550px;
   position: relative; }
-  header .animate-area {
-    height: inherit;
-    overflow: hidden;
-    position: absolute;
-    width: 100%; }
-    header .animate-area .square {
-      align-items: center;
-      justify-content: center;
-      animation: rotate 15s infinite linear;
-      background-color: #f23334;
-      box-shadow: 20px 30px 20px #d0393a;
-      height: 230px;
-      opacity: 0.8;
-      transform: rotate(45deg);
-      width: 230px; }
+
+.animate-area {
+  height: inherit;
+  overflow: hidden;
+  position: absolute;
+  width: 100%; }
+  .animate-area .square {
+    align-items: center;
+    justify-content: center;
+    animation: rotate 15s infinite linear;
+    background-color: #f23334;
+    box-shadow: 20px 30px 20px #d0393a;
+    height: 230px;
+    opacity: 0.8;
+    transform: rotate(45deg);
+    width: 230px; }
 @keyframes rotate {
   from {
     transform: rotate(45deg); }
   to {
     transform: rotate(-45deg); } }
-      header .animate-area .square .inner-square {
-        background-color: #ff4544;
-        box-shadow: 20px 30px 20px inset #d0393a;
-        height: 130px;
-        width: 130px; }
-    header .animate-area .big-circle {
-      animation: revolve 30s infinite ease-in;
-      background: radial-gradient(#fd4042 45%, #e81d30);
-      border-radius: 50%;
-      height: 220px;
-      width: 220px; }
+    .animate-area .square .inner-square {
+      background-color: #ff4544;
+      box-shadow: 20px 30px 20px inset #d0393a;
+      height: 130px;
+      width: 130px; }
+  .animate-area .big-circle {
+    animation: revolve 30s infinite ease-in;
+    background: radial-gradient(#fd4042 45%, #e81d30);
+    border-radius: 50%;
+    height: 220px;
+    width: 220px; }
 @keyframes revolve {
   0% {
     transform: translate(-30%, -30%); }
@@ -86,18 +86,24 @@ header {
     transform: translate(-30%, 150%); }
   100% {
     transform: translate(-30%, -30%); } }
-    header .animate-area .small-outer-circle {
-      animation: grow 10s infinite linear;
-      background-color: #fff;
-      margin: 10px; }
-    header .animate-area .red-outer-circle {
-      animation: grow 15s infinite ease-in-out;
-      background-color: #db3c3d;
-      height: 60px;
-      width: 60px; }
-    header .animate-area .red-inner-circle {
-      height: 55px;
-      width: 55px; }
+  .animate-area .small-outer-circle {
+    animation: grow 10s infinite linear;
+    background-color: #fff;
+    margin: 10px; }
+  .animate-area .red-outer-circle {
+    animation: grow 15s infinite ease-in-out;
+    background-color: #db3c3d;
+    height: 60px;
+    width: 60px; }
+  .animate-area .red-inner-circle {
+    height: 55px;
+    width: 55px; }
+
+header {
+  /*background-color: $primary-color;
+  color: #fff;
+  position: relative;*/
+  height: 550px; }
   header .header-text {
     flex-direction: column;
     height: inherit;
@@ -158,10 +164,10 @@ main {
         main section .about-rows article div {
           align-items: center;
           justify-content: center;
-          background-color: #ff4544;
           height: 70px;
           transform: rotate(45deg);
-          width: 70px; }
+          width: 70px;
+          background-color: #ff4544; }
           main section .about-rows article div i {
             transform: rotate(-45deg); }
         main section .about-rows article p {
@@ -188,6 +194,32 @@ main {
         height: inherit;
         margin: 0px auto;
         width: 80%; }
+  main #contact {
+    min-height: 300px; }
+    main #contact .animate-area {
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: inherit; }
+      main #contact .animate-area div {
+        justify-content: space-around; }
+    main #contact .contact-text {
+      color: #fff;
+      position: absolute;
+      width: 100%; }
+      main #contact .contact-text h2 {
+        border-bottom: 5px solid #fff;
+        color: inherit; }
+      main #contact .contact-text article {
+        justify-content: space-around; }
+        main #contact .contact-text article div {
+          align-items: center;
+          justify-content: center;
+          height: 70px;
+          transform: rotate(45deg);
+          width: 70px;
+          background-color: #fff; }
+          main #contact .contact-text article div i {
+            transform: rotate(-45deg); }
 
 /**** Big screen sizes ****/
 @media screen and (min-width: 550px) {
