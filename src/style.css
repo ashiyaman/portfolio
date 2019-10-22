@@ -36,7 +36,7 @@ li {
 .margin-auto {
   margin: auto; }
 
-ul {
+nav ul {
   display: none; }
 
 #contact, header {
@@ -195,7 +195,7 @@ main {
         margin: 0px auto;
         width: 80%; }
   main #contact {
-    min-height: 300px; }
+    min-height: 350px; }
     main #contact .animate-area {
       flex-direction: column;
       justify-content: space-between;
@@ -203,23 +203,53 @@ main {
       main #contact .animate-area div {
         justify-content: space-around; }
     main #contact .contact-text {
+      align-items: center;
+      justify-content: center;
       color: #fff;
+      flex-direction: column;
       position: absolute;
       width: 100%; }
       main #contact .contact-text h2 {
         border-bottom: 5px solid #fff;
-        color: inherit; }
-      main #contact .contact-text article {
-        justify-content: space-around; }
-        main #contact .contact-text article div {
-          align-items: center;
-          justify-content: center;
-          height: 70px;
-          transform: rotate(45deg);
-          width: 70px;
-          background-color: #fff; }
-          main #contact .contact-text article div i {
-            transform: rotate(-45deg); }
+        color: inherit;
+        margin-bottom: 55px; }
+      main #contact .contact-text section {
+        width: inherit; }
+        main #contact .contact-text section article {
+          justify-content: space-around;
+          margin-bottom: 50px; }
+          main #contact .contact-text section article div {
+            align-items: center;
+            justify-content: center;
+            height: 70px;
+            transform: rotate(45deg);
+            width: 70px;
+            background-color: #fff;
+            cursor: pointer; }
+            main #contact .contact-text section article div i {
+              transform: rotate(-45deg); }
+            main #contact .contact-text section article div i {
+              color: #ff4544; }
+          main #contact .contact-text section article div:hover {
+            background-color: #d0393a;
+            color: #fff; }
+  main footer {
+    align-items: center;
+    justify-content: center;
+    background-color: #d0393a;
+    color: #fff;
+    font-size: 14px;
+    flex-direction: column; }
+    main footer * {
+      padding: 5px 0px; }
+    main footer ul {
+      justify-content: space-around;
+      width: 100%; }
+      main footer ul li {
+        pointer: cursor;
+        text-transform: uppercase; }
+    main footer p {
+      margin-bottom: 10px; }
 
 /**** Big screen sizes ****/
 @media screen and (min-width: 550px) {
@@ -235,7 +265,25 @@ main {
     100% {
       transform: translate(-30%, -30%); } }
   nav li {
-    font-size: 12px; } }
+    font-size: 12px; }
+
+  #contact {
+    min-height: 250px !important; }
+    #contact section {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; }
+      #contact section article {
+        width: 100%; }
+
+  footer {
+    flex-direction: row !important;
+    font-size: 10px !important;
+    justify-content: space-between !important; }
+    footer ul {
+      width: 50% !important; }
+    footer p {
+      margin: 0px 15px 0px 0px !important; } }
 @media screen and (min-width: 800px) {
   @keyframes revolve {
     0% {
